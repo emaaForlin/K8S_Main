@@ -37,14 +37,12 @@ spec:
           valueFrom:
             secretKeyRef:
               name: pihole-secret
-              key: webpassword
+              key: webpasswd 
         volumeMounts:
           - mountPath: "/etc/pihole"
             name: pihole-etc
           - mountPath: "/etc/dnsmasq.d"
             name: dnsmasq-etc
-
-      
 
       volumes:
         - name: pihole-etc

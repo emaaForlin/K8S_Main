@@ -5,9 +5,12 @@ resources:
   - 00-pihole-deployment.yaml
   - 01-pihole-svc.yaml 
   - 02-pihole-ingress.yaml 
-  - 03-pihole-pv.yaml
-  - 04-pihole-pv-claims.yaml
+  - 03-pihole-pv-claims.yaml
 
 commonLabels:
   app: pihole
 
+secretGenerator:
+- name: pihole-secret
+  files:
+  - webpasswd=./private/pihole-secret.yml
