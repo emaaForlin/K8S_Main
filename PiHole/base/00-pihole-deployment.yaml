@@ -19,13 +19,6 @@ spec:
           - containerPort: 80 
           - containerPort: 53
           - containerPort: 67
-        resources:
-          requests: 
-            cpu: "50m"
-            memory: "60Mi"
-          limits: 
-            cpu: "80m"
-            memory: "100Mi"
         securityContext:
           capabilities:
             add:

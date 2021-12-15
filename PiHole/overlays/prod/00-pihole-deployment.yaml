@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pihole
+spec:
+  template:
+    spec:
+      containers:
+      - name: pihole
+        resources:
+          requests: 
+            cpu: "50m"
+            memory: "60Mi"
+          limits: 
+            cpu: "80m"
+            memory: "100Mi"
