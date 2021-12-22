@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nfs-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nfs
+  template:
+    metadata:
+      labels:
+        app: nfs
+    spec:
+      containers:
+      - name: nfs
+        image: itsthenetwork/nfs-server-alpine:latest
+        securityContext:
+          privileged: true
+        ports:
+          - containerPort: 2049
+        env:
+        - name: TZ
+          value: "America/Argentina/Cordoba"
+        - name: SHARED_DIRECTORY
+          value: "/"
+        volumeMounts:
+          - mountPath: "/etc/exports"
+            subPath: "exports"
+            name: exports
+          - mountPath: "/Public"
+            name: nfs-storage
+  
+      volumes:
+        - name: exports
+          configMap: 
+            name: nfs-exports
+        - name: nfs-storage
+          hostPath:
+            path: /mnt/k8s/storage

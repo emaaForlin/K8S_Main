@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: prod-1
+bases:
+  - ../../base
+
+patchesStrategicMerge:
+  - 00-nfs-deployment.yml

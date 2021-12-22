@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nfs-server
+spec:
+  replicas: 2
+  template:
+    spec:
+      containers:
+      - name: nfs
+        resources:
+          requests: 
+            cpu: "50m"
+            memory: "60Mi"
+          limits: 
+            cpu: "80m"
+            memory: "100Mi"

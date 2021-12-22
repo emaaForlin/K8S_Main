@@ -44,5 +44,3 @@ spec:
         - name: dnsmasq-etc
           persistentVolumeClaim:
             claimName: pihole-dnsmasq-etc
-         
-        
