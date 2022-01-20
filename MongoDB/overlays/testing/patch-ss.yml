@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mongo-app
+spec:
+  selector:
+    matchLabels:
+      role: mongo
+      environment: testing
+  replicas: 1

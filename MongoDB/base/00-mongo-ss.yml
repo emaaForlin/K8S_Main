@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mongo-app
+spec:
+  selector:
+    matchLabels:
+      role: mongo
+  replicas: 1
+  serviceName: "mongo-svc"
+  template:
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers: 
+      - name: mongodb
+        image: mongo
+        command:
+          - mongod
+          - "--bind_ip_all"
+        ports:
+          - containerPort: 27017
+        env:
+        - name: MONGO_INITDB_ROOT_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secrets
+              key: MONGO_INITDB_ROOT_USERNAME
+        - name: MONGO_INITDB_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secrets
+              key: MONGO_INITDB_ROOT_PASSWORD
+        volumeMounts:
+          - name: mongo-persistent-storage
+            mountPath: "/data/db"
+      volumes:
+        - name: mongo-persistent-storage
+          persistentVolumeClaim:
+            claimName: mongo-data

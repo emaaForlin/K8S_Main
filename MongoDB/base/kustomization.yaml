@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - 00-mongo-ss.yml
+  - 02-mongo-pvc.yml
+
+secretGenerator:
+- name: mongo-secrets
+  files:
+  - MONGO_INITDB_ROOT_USERNAME=./private/username.yml
+  - MONGO_INITDB_ROOT_PASSWORD=./private/password.yml
