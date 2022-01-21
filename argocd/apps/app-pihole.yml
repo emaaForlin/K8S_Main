@@ -13,4 +13,6 @@ spec:
     targetRevision: main
   destination:
     name: in-cluster
-
+    namespace: default
+  syncPolicy:
+    automated: {}
