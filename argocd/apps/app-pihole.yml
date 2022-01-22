@@ -9,7 +9,7 @@ spec:
   project: default
   source: 
     path: apps/PiHole/overlays/prod
-    repoURL: https://github.com/emaaForlin/K8S_Main.git
+    repoURL: git@github.om:emaaForlin/K8S_Main.gitc
     targetRevision: main
   destination:
     name: in-cluster

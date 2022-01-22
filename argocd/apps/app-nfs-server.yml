@@ -9,7 +9,7 @@ spec:
   project: default
   source: 
     path: apps/NFS/overlays/prod
-    repoURL: https://github.com/emaaForlin/K8S_Main.git
+    repoURL: gitgithub.com:emaaForlin/K8S_Main.git@
     targetRevision: main
   destination:
     name: in-cluster
