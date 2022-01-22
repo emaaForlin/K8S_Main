@@ -7,6 +7,7 @@ spec:
     spec:
       containers:
       - name: pihole
+        image: pihole/pihole:2021.12.1
         resources:
           requests: 
             cpu: "50m"
