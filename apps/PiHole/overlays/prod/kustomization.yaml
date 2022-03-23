@@ -1,15 +1,13 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namespace: prod-1
+namespace: pihole
 
 bases:
   - ../../base
-
 commonLabels:
-  app: pihole
-  level: high
-
+  context: prod
 patchesStrategicMerge:
-  - 00-pihole-deployment.yaml
-  - ingress.yaml
+  - 00-pihole-deploy-patch.yaml
+  - 01-pihole-svc-patch.yaml
+  - 02-ingress-patch.yaml

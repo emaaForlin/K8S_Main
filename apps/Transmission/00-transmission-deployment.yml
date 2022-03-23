@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tranmission
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tranmission
+  template:
+    metadata:
+      labels:
+        app: tranmission
+    spec:
+      containers:
+      - name: tranmission
+        image: linuxserver/transmission:amd64-latest
+        ports:
+          - containerPort: 9091 
+          - containerPort: 51413
+        env:
+        - name: TZ
+          value: "America/Argentina/Cordoba"
+        - name: PUID
+          value: 1000
+        - name: PGID
+          value: 1000
+        - name: USER
+          valueFrom:
+            secretKeyRef:
+              name: transmission-secret
+              key: user
+        - name: PASS
+          valueFrom:
+            secretKeyRef:
+              name: transmission-secret
+              key: pass
+        volumeMounts:
+          - mountPath: /config
+            name: config
+          - mountPath: /downloads
+            name: downloads
+
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: transmission-config
+        - name: downloads
+          persistentVolumeClaim:
+            claimName: transmission-downloads

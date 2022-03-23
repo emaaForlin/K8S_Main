@@ -4,11 +4,6 @@ metadata:
   name: pihole-ingress
 spec:
   ingressClassName: nginx
-  defaultBackend:
-    service:
-      name: pihole-svc
-      port:
-        number: 80
   rules:
   - host: dns.admin.theforlin.com 
     http:

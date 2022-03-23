@@ -8,9 +8,6 @@ spec:
     matchLabels:
       app: pihole
   template:
-    metadata:
-      labels:
-        app: pihole
     spec:
       containers:
       - name: pihole
