@@ -1,23 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: grafana-ingress
+  name: pihole-ingress
 spec:
-  ingressClassName: default
-  defaultBackend:
-    service:
-      name: grafana
-      port:
-        number: 80
+  ingressClassName: nginx
   rules:
-  - host: monitoring.forlin.com
+  - host: dns.admin.theforlin.com 
     http:
       paths:
-        - path: /grafana
+        - path: /
           pathType: Prefix
           backend:
             service:
-              name: grafana
+              name: pihole-svc
               port:
                 number: 80 
         

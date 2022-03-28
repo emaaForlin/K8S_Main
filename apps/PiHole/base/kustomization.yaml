@@ -5,9 +5,7 @@ namespace: pihole
 resources:
   - 00-pihole-ns.yaml
   - 01-pihole-deployment.yaml
-  - 02-pihole-svc.yaml 
-  - 03-pihole-pv-claims.yaml
-  - 04-ingress.yaml
+  - 02-ingress.yaml
 
 commonLabels:
   app: pihole

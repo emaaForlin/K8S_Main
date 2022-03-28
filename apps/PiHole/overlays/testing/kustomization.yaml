@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: pihole
+
+bases:
+  - ../../base
+commonLabels:
+  context: testing
+
+resources:
+  - 03-pihole-pv-claims.yaml
+  - 01-pihole-svc.yaml
+patchesStrategicMerge:
+  - 00-pihole-deploy-patch.yaml
+  - 02-ingress.yaml
