@@ -1,11 +1,11 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: pihole-ingress-testing
+  name: pihole-ingress
 spec:
   ingressClassName: nginx
   rules:
-  - host: dns.admin.theforlin.com 
+  - host: dns.testing.theforlin.com 
     http:
       paths:
         - path: /
