@@ -6,6 +6,7 @@ resources:
   - 00-pihole-ns.yaml
   - 01-pihole-deployment.yaml
   - 02-ingress.yaml
+  - 03-pihole-svc.yaml
 
 commonLabels:
   app: pihole

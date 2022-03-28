@@ -12,4 +12,4 @@ resources:
 patchesStrategicMerge:
   - 00-pihole-deploy-patch.yaml
   - 02-ingress.yaml
-  - 01-pihole-svc-pacth.yaml
+  - 01-pihole-svc-patch.yaml

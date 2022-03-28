@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app: pihole
-    context: prod
+    context: testing
   type: LoadBalancer
   loadBalancerIP: 192.168.0.19
 ---
@@ -16,4 +16,4 @@ metadata:
 spec:
   selector:
     app: pihole
-    context: prod
+    context: testing
