@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source: 
-    path: apps/PiHole/overlays/prod
+    path: apps/PiHole/overlays/testing
     repoURL: https://github.com/emaaForlin/K8S_Main.git
     targetRevision: main
   destination:

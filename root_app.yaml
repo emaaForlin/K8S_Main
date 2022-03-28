@@ -6,11 +6,11 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: testing
+  project: default
   source: 
     path: argocd/apps
     repoURL: https://github.com/emaaForlin/K8S_Main.git
-    targetRevision: testing
+    targetRevision: main
   destination:
     name: in-cluster
   syncPolicy:
