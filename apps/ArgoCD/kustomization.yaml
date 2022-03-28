@@ -7,4 +7,4 @@ resources:
   - 01-ingress-argocd.yaml
 patchesStrategicMerge:
   - 02-deploy-argocd-patch.yaml
-
+  - 03-svc-argocd-patch.yaml
