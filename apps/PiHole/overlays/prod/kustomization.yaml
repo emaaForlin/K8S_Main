@@ -7,8 +7,6 @@ bases:
 commonLabels:
   context: prod
 
-resources:
-  - 03-pihole-pv-claims.yaml
 patchesStrategicMerge:
   - 00-pihole-deploy-patch.yaml
   - 01-pihole-svc-patch.yaml

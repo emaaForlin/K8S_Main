@@ -18,16 +18,3 @@ spec:
           limits: 
             cpu: "65m"
             memory: "100Mi"
-        volumeMounts:
-            - mountPath: "/etc/pihole"
-              name: pihole-etc
-            - mountPath: "/etc/dnsmasq.d"
-              name: dnsmasq-etc
-
-      volumes:
-        - name: pihole-etc
-          persistentVolumeClaim:
-            claimName: pihole-etc-test
-        - name: dnsmasq-etc
-          persistentVolumeClaim:
-            claimName: pihole-dnsmasq-etc-test
