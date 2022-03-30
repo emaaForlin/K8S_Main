@@ -15,3 +15,5 @@ spec:
     name: in-cluster
   syncPolicy:
     automated: {}
+    syncOptions:
+    - Replace=true
