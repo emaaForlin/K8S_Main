@@ -7,7 +7,6 @@ resources:
   - 01-pihole-deployment.yaml
   - 02-ingress.yaml
   - 03-pihole-svc.yaml
-  - 04-pihole-pv-claims.yaml
 
 commonLabels:
   app: pihole

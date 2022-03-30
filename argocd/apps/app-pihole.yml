@@ -16,5 +16,3 @@ spec:
     namespace: default
   syncPolicy:
     automated: {}
-    syncOptions:
-    - Replace=true

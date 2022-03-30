@@ -26,7 +26,7 @@ spec:
       volumes:
       - name: pihole-etc
         persistentVolumeClaim:
-          claimName: pihole-etc
+          claimName: pihole-etc-pvc
       - name: dnsmasq-etc
         persistentVolumeClaim:
-          claimName: pihole-dnsmasq-etc
+          claimName: pihole-dnsmasq-etc-pvc
