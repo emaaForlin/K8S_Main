@@ -3,3 +3,4 @@ kind: Kustomization
 
 resources:
   - https://github.com/prometheus-operator/kube-prometheus.git
+  - 00-ingress-grafana.yaml
