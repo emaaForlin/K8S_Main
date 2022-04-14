@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mariadb
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source: 
+    path: apps/Mariadb
+    repoURL: https://github.com/emaaForlin/K8S_Main.git
+    targetRevision: main
+  destination:
+    name: in-cluster
+    namespace: default
+  syncPolicy:
+    automated: {}
